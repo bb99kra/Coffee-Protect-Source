@@ -1,122 +1,86 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>me.nik</groupId>
-        <artifactId>CoffeeProtect</artifactId>
-        <version>2.5.6</version>
-    </parent>
 
-    <artifactId>plugin</artifactId>
+    <groupId>me.nik</groupId>
+    <artifactId>CoffeeProtect</artifactId>
+    <version>2.5.6</version>
+    <packaging>jar</packaging>
+
+    <name>CoffeeProtect</name>
+    <description>An advanced next-generation anti-crash and exploit protection plugin for Minecraft</description>
+    <url>https://github.com/NikV2/CoffeeProtect</url>
+
+    <properties>
+        <java.version>21</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
 
     <repositories>
-
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://www.jitpack.io</url>
-        </repository>
-
         <repository>
             <id>papermc</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
-
         <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
-
         <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
-        </repository>
-
-        <repository>
-            <id>bungeecord-repo</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
-
-        <repository>
-            <id>viaversion-repo</id>
-            <url>https://repo.viaversion.com</url>
-        </repository>
-
-        <repository>
-            <id>arim-mvn-lgpl3</id>
-            <url>https://mvn-repo.arim.space/lesser-gpl3/</url>
-        </repository>
-
-        <repository>
-            <id>codemc-releases</id>
-            <url>https://repo.codemc.io/repository/maven-releases/</url>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
         </repository>
         <repository>
-            <id>codemc-snapshots</id>
-            <url>https://repo.codemc.io/repository/maven-snapshots/</url>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
-
     </repositories>
 
     <dependencies>
-
+        <!-- Paper API -->
         <dependency>
-            <groupId>me.nik</groupId>
-            <artifactId>coffeeprotect-api</artifactId>
-            <version>${project.version}</version>
-            <type>jar</type>
-            <scope>compile</scope>
-            <optional>true</optional>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>1.21.1-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
 
+        <!-- PacketEvents API -->
         <dependency>
-            <groupId>com.github.NikV2</groupId>
-            <artifactId>packetevents</artifactId>
-            <version>2.0-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>com.github.retrooper</groupId>
+            <artifactId>packetevents-spigot</artifactId>
+            <version>2.7.0</version>
+            <scope>provided</scope>
         </dependency>
 
+        <!-- PlaceholderAPI -->
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>2.11.6</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Kyori Adventure -->
         <dependency>
             <groupId>net.kyori</groupId>
             <artifactId>adventure-api</artifactId>
-            <version>4.25.0</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.24.3</version>
+            <version>4.17.0</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
-            <groupId>dev.folia</groupId>
-            <artifactId>folia-api</artifactId>
-            <version>1.20.4-R0.1-SNAPSHOT</version>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-text-minimessage</artifactId>
+            <version>4.17.0</version>
             <scope>provided</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>26.1.2-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>net.md-5</groupId>
-            <artifactId>bungeecord-api</artifactId>
-            <version>1.21-R0.3-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-
     </dependencies>
 
     <build>
-        <finalName>${project.parent.name}</finalName>
-        <defaultGoal>clean install package</defaultGoal>
+        <finalName>${project.name}-${project.version}</finalName>
+        <defaultGoal>clean package</defaultGoal>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -124,92 +88,16 @@
             </resource>
         </resources>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.3.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-
-                            <artifactSet>
-                                <excludes>
-                                    <exclude>com.github.NikV2.packetevents:packetevents-fabric</exclude>
-                                    <exclude>com.github.NikV2.packetevents:packetevents-fabric-common</exclude>
-                                    <exclude>com.github.NikV2.packetevents:packetevents-fabric-intermediary</exclude>
-                                    <exclude>com.github.NikV2.packetevents:packetevents-fabric-official</exclude>
-                                    <exclude>com.github.NikV2.packetevents:packetevents-velocity</exclude>
-                                    <exclude>com.github.NikV2.packetevents:packetevents-sponge</exclude>
-                                    <exclude>net.fabricmc:fabric-loader</exclude>
-                                    <exclude>io.netty</exclude>
-                                    <exclude>assets.mappings</exclude>
-                                    <exclude>com.github.NikV2.packetevents:packetevents-bungeecord</exclude>
-                                </excludes>
-                            </artifactSet>
-
-                            <minimizeJar>false</minimizeJar>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <relocations>
-
-                                <relocation>
-                                    <pattern>net.kyori.adventure.text</pattern>
-                                    <shadedPattern>me.nik.coffeeprotect.io.github.retrooper.packetevents.adventure
-                                    </shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>net.kyori</pattern>
-                                    <shadedPattern>me.nik.coffeeprotect.libs.kyori</shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>com.github.retrooper</pattern>
-                                    <shadedPattern>me.nik.coffeeprotect<!--.libs-->.com.github.retrooper
-                                    </shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>io.github.retrooper</pattern>
-                                    <shadedPattern>me.nik.coffeeprotect<!--.libs-->.io.github.retrooper
-                                    </shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>com.google.code.gson</pattern>
-                                    <shadedPattern>me.nik.coffeeprotect.libs.gson</shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>org.json</pattern>
-                                    <shadedPattern>me.nik.coffeeprotect.libs.json</shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>org.intellij</pattern>
-                                    <shadedPattern>me.nik.coffeeprotect.libs.intellij</shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>org.jetbrains</pattern>
-                                    <shadedPattern>me.nik.coffeeprotect.libs.jetbrains</shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>me.nik:*</pattern>
-                                    <shadedPattern>me.nik:*</shadedPattern>
-                                </relocation>
-
-                            </relocations>
-                        </configuration>
-                    </execution>
-                </executions>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
