@@ -71,5 +71,5 @@ File `.jar` thành phẩm sẽ xuất hiện tại thư mục `target/CoffeeProt
 ---
 
 ## 👨‍💻 Tác giả & Bản quyền (Credits)
-* **Author**: Nguyen ([@bb99kra](https://github.com/bb99kra)) & Gemini AI.
+* **Author**: Nguyen ([@bb99kra](https://github.com/bb99kra))
 * **Compatibility**: Minecraft 1.20 - 1.21.x (Paper, Leaf, Purpur, Folia).
