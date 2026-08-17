@@ -1,0 +1,55 @@
+name: CoffeeProtect
+version: 2.5.6
+main: me.nik.coffeeprotect.CoffeeProtect
+api-version: 1.13
+prefix: CoffeeProtect
+loadbefore:
+  - packetevents
+softdepend:
+  - ProtocolLib
+  - ProtocolSupport
+  - ViaVersion
+  - ViaBackwards
+  - ViaRewind
+  - Geyser-Spigot
+authors: [ Nik ]
+description: An advanced next generation protection plugin
+folia-supported: true
+commands:
+  coffeeprotect:
+    description: The main coffee protect command!
+    aliases: [ cp ]
+permissions:
+  coffeeprotect.admin:
+    description: Gives access to all admin commands
+    default: op
+  coffeeprotect.reload:
+    description: Gives access to reload coffee protect
+    default: op
+  coffeeprotect.alerts:
+    description: Gives access to enable alerts
+    default: op
+  coffeeprotect.logs:
+    description: Gives access to view a player's logs alerts
+    default: op
+  coffeeprotect.menu:
+    description: Gives access to the coffee protect menu
+    default: op
+  coffeeprotect.info:
+    description: Gives access to see a player's information
+    default: op
+  coffeeprotect.troll:
+    description: Troll a player
+    default: op
+  coffeeprotect.packetlogger:
+    description: Toggle the Packet Logger on/off
+    default: op
+  coffeeprotect.profiler:
+    description: Toggle the Profiler on/off
+    default: op
+  coffeeprotect.disconnect:
+    description: Disconnect a player from the server
+    default: op
+  coffeeprotect.discord:
+    description: Execute a webhook alert for testing purposes
+    default: op
