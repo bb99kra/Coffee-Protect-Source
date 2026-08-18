@@ -1,75 +1,169 @@
-# ☕ Coffee Protect Nguyen
-
 <div align="center">
 
-![Java](https://img.shields.io/badge/Java-21-orange.svg)
-![Minecraft](https://img.shields.io/badge/Minecraft-1.20--1.21.x-brightgreen.svg)
-![Platform](https://img.shields.io/badge/Platform-Paper%20%7C%20Leaf%20%7C%20Purpur%20%7C%20Folia-blue.svg)
-![PacketEvents](https://img.shields.io/badge/PacketEvents-2.13.0-purple.svg)
-![Author](https://img.shields.io/badge/Author-Nguyen%20(bb99kra)-gold.svg)
+# ☕ Coffee Protect
 
-**Next-Generation Anti-Crash, Packet Filter & Exploit Protection Plugin for High-Performance Minecraft Networks.**
+<p align="center">
+  <b>Prevent exploits, server crashers and duping effectively! (Geyser, Folia Support)</b>
+</p>
+
+[![Java](https://img.shields.io/badge/Java-17%20%7C%2021-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
+[![Minecraft](https://img.shields.io/badge/Minecraft-1.8.8--1.21.x-35A853?style=for-the-badge&logo=minecraft&logoColor=white)](https://papermc.io/)
+[![Platform](https://img.shields.io/badge/Platform-Bukkit%20%7C%20Spigot%20%7C%20Paper%20%7C%20Purpur%20%7C%20Folia-4285F4?style=for-the-badge)](https://papermc.io/)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Support-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/m7j2Y9H)
+[![BuiltByBit](https://img.shields.io/badge/BuiltByBit-30202-0084FF?style=for-the-badge)](https://builtbybit.com/resources/coffee-protect.30202/)
+
+---
+
+![CENTER](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/CENTER.png)
+
+### 🎥 Showcase & Video Previews
+
+| | |
+|:---:|:---:|
+| [![Video 1](https://img.youtube.com/vi/sxSMrEheI14/hqdefault.jpg)](https://www.youtube.com/watch?v=sxSMrEheI14) | [![Video 2](https://img.youtube.com/vi/jXQgIrQND5c/hqdefault.jpg)](https://www.youtube.com/watch?v=jXQgIrQND5c) |
+| [![Video 3](https://img.youtube.com/vi/969F6OBzdlA/hqdefault.jpg)](https://www.youtube.com/watch?v=969F6OBzdlA) | [![Video 4](https://img.youtube.com/vi/Ecx-ZhDpXmY/hqdefault.jpg)](https://www.youtube.com/watch?v=Ecx-ZhDpXmY) |
+
+[![Video 5](https://img.youtube.com/vi/1DTnIKlvscg/hqdefault.jpg)](https://www.youtube.com/watch?v=1DTnIKlvscg)
+
+---
+
+![WORK](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/WORK.png)
+
+![BLOCKED_EXPLOITS](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/BLOCKED_EXPLOITS.png)
 
 </div>
 
----
+### 🛡️ Blocked Exploits & Protections
 
-## 🌟 Giới thiệu (Overview)
+* ✔️ **Netty Crashers** *(Packet Decoder, Complete Netty Protection)*
+* ✔️ **Server Crashers** *(Invalid position, Chunk overload, Exploitable commands, and much more)*
+* ✔️ **Smart Packet Limiter** *(Using packet rates)*
+* ✔️ **Invalid Items**
+* ✔️ **Anticheat Disablers** *(Certain methods that can be used in order to disable certain anticheats)*
+* ✔️ **Entity Overload** *(Prevents server crashers by using entities)*
+* ✔️ **Redstone Exploits**
+* ✔️ **Invalid Actions** *(Action validator takes care of certain exploits such as invalid teleport attempts or player actions)*
+* ✔️ **Duping** *(Invalid inventory - container actions, Chunk exploits, and much more)*
+* ✔️ **Console Spammers**
+* ✔️ **Invalid - Incorrect Packets**
+* ✔️ **Invalid Placements**
+* ✔️ **Invalid Signs**
+* ✔️ **Invalid Payloads**
+* ✔️ **Many Many More!**
 
-**Coffee Protect Nguyen** là giải pháp bảo mật và chống crash toàn diện dành cho máy chủ Minecraft hiện đại (hỗ trợ đầy đủ từ **Minecraft 1.20 đến 1.21.x**, bao gồm Paper, Purpur, Leaf và Folia).
-
-Plugin sử dụng kiến trúc chặn gói tin tầng mạng trực tiếp thông qua **PacketEvents 2.13.0 API**, giúp phát hiện và vô hiệu hóa ngay lập tức các packet độc hại trước khi chúng kịp gây lag hay sập server.
-
----
-
-## 🛡️ Các tính năng bảo vệ chính (Core Features)
-
-| Mô-đun | Chức năng chi tiết |
-| :--- | :--- |
-| 📖 **Book Exploit Protection** | Giới hạn số trang sách, byte mỗi trang, tổng dung lượng sách và ngăn chặn toàn bộ các mã JSON dịch thuật độc hại (`translation.test.invalid`, `run_command`). |
-| 🪧 **Sign Exploit Protection** | Giới hạn độ dài ký tự trên biển, phát hiện và hủy ngay lập tức các lệnh ẩn dạng `clickEvent` (`/op`, `/execute`). |
-| 🎒 **Creative Slot / NBT Check** | Kiểm tra độ sâu phân cấp đệ quy NBT Compound (`max_nbt_depth`), ngăn chặn Skull URL độc hại và enchant bất hợp pháp. |
-| 📡 **Custom Payload Protection** | Chặn flood kênh tin nhắn mạng (Payload buffer overflow) và nhận diện Client Brand của người chơi. |
-| 🪟 **Window Click Protection** | Chặn spam click kho đồ siêu tốc, chặn click vào các slot số âm hoặc slot ảo không tồn tại. |
-| 🏃 **Movement & Coordinate Check** | Phát hiện và chặn các gói tin di chuyển chứa tọa độ `NaN` (Not-a-Number), `Infinity` hoặc dịch chuyển vượt biên giới gây crash thế giới. |
-| 🔴 **Redstone Lag Protection** | Giám sát tần số kích hoạt Redstone trong từng tick, tự động ngắt các cỗ máy tạo lag (Clock lag / Lag machine). |
-| 📊 **Discord Webhook Alerts** | Tự động gửi Embed cảnh báo vi phạm kèm TPS server theo thời gian thực về kênh Discord của Staff. |
-| 🖥️ **Admin GUI & PlaceholderAPI** | Menu tương tác trực quan bật/tắt module ngay trong game (`/cp menu`) và hỗ trợ đầy đủ các biến PlaceholderAPI (`%coffeeprotect_...%`). |
+> ℹ️ *Note that some exploits get detected by different modules. For example, most book exploits can be detected by the Packet Decoder or Invalid Items check.*
+>
+> 📖 **For a full list make sure to read the [config.yml](https://github.com/NikV2/CoffeeProtectAPI/wiki/Config)**
 
 ---
 
-## 📋 Lệnh & Quyền hạn (Commands & Permissions)
+<div align="center">
 
-| Lệnh | Mô tả | Quyền hạn |
-| :--- | :--- | :--- |
-| `/cp` | Hiển thị bảng hướng dẫn lệnh | `coffeeprotect.admin` |
-| `/cp stats` | Xem tổng số lượng packet độc hại đã chặn | `coffeeprotect.admin` |
-| `/cp menu` | Mở menu GUI cài đặt và bật/tắt module | `coffeeprotect.admin` |
-| `/cp reload` | Tải lại toàn bộ cấu hình chỉ trong 2ms | `coffeeprotect.admin` |
-| `/cp info <player>` | Xem điểm vi phạm và Client Brand của người chơi | `coffeeprotect.admin` |
-| `/cp alerts` | Bật/tắt nhận thông báo cảnh báo in-game | `coffeeprotect.alerts` |
+![FEATURES](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/FEATURES.png)
+
+### 🔔 Discord Alerts
+
+![WEBHOOK](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/WEBHOOK.png)
+
+*Receive alerts from CoffeeProtect to your Discord Server by using a Webhook.*  
+*Making it easy for you to catch exploit attempts even when you're not online!*
 
 ---
 
-## 🛠️ Hướng dẫn Tự Build (Build from Source)
+### 🎛️ Dynamic GUI
 
-Dự án được cấu hình chuẩn **Maven**:
+| Menu Overview | Checks Configuration | Settings Manager |
+| :---: | :---: | :---: |
+| ![menu.gif](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/gif/menu.gif) | ![checks.gif](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/gif/checks.gif) | ![settings.gif](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/gif/settings.gif) |
+
+*Enable or Disable certain settings and checks in game at any given time via a Wonderful GUI, Without the need of a server restart!*
+
+---
+
+### 📊 Player Logging System
+
+![logs.gif](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/gif/logs.gif)
+
+*Store Player Violations by using a Database of your choice, And review them yourself by using CoffeeProtect's GUI!*
+
+---
+
+### 🛠️ Utilities
+
+| Client Brand Inspector | Alert Notifications | Hover Details | Info Command |
+| :---: | :---: | :---: | :---: |
+| ![CLIENT](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/CLIENT.png) | ![ALERTS](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/ALERTS.png) | ![HOVER_ALERTS](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/HOVER_ALERTS.png) | ![INFO_COMMAND](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/INFO_COMMAND.png) |
+
+*View player information such as their Client Brand or Protocol Version.*  
+*You're also able to prevent specific client brands from joining the server!*
+
+---
+
+![FAQ](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/FAQ.png)
+
+</div>
+
+### ❓ Frequently Asked Questions
+
+* **Q) Does CoffeeProtect support Geyser? (Bedrock Players)**  
+  **A)** Yes! CoffeeProtect is not affected by Bedrock Players.
+
+* **Q) Does CoffeeProtect support Folia?**  
+  **A)** Yes!
+
+* **Q) My server has custom items or plugins that can cause issues with CoffeeProtect, what do I do?**  
+  **A)** CoffeeProtect automatically adjusts the default config and certain checks in order to account for custom items.
+
+* **Q) Where am I able to report any issues, errors or anything related?**  
+  **A)** After getting verified on our [Discord Server](https://discord.gg/m7j2Y9H), you can then open a ticket and report any issue you're having. Once we're available we'll have a look and try to resolve it.
+
+* **Q) Is this better than X Y Z?**  
+  **A)** We don't know, we respect every developer's work especially for the products that have been on the market for years. We'll never claim to be better than any other plugin, we'll instead let our customers form that opinion.
+
+---
+
+<div align="center">
+
+![INFORMATION](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/INFORMATION.png)
+
+</div>
+
+### ⚠️ Incompatibilities
+
+**CoffeeProtect may be incompatible with the following:**
+* ❌ **Plugman** *(Reloading plugins dynamically in general)*
+* ❌ Any weird badly coded Packet Listening APIs
+
+---
+
+<div align="center">
+
+### 📚 Documentation & Quick Links
+
+[**Commands**](https://github.com/NikV2/CoffeeProtectAPI/wiki/Commands) • [**Permissions**](https://github.com/NikV2/CoffeeProtectAPI/wiki/Permissions) • [**Config**](https://github.com/NikV2/CoffeeProtectAPI/wiki/Config) • [**Wiki**](https://github.com/NikV2/CoffeeProtectAPI/wiki)
+
+[![Discord](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/COFFEELOVERS.png)](https://discord.gg/m7j2Y9H)
+
+![FOOTER](https://raw.githubusercontent.com/NikV2/CoffeeProtectAPI/main/img/FOOTER.png)
+
+### ⭐ Support the Project
+**Would you like to Support the future development of this Project? Make sure to rate ⭐⭐⭐⭐⭐**
+
+![bStats](https://bstats.org/signatures/bukkit/CoffeeProtect.svg)
+
+---
+
+### 💻 Build from Source
 
 ```bash
-# 1. Clone kho lưu trữ
+# Clone the repository
 git clone https://github.com/bb99kra/Coffee-Protect-Source.git
 
-# 2. Di chuyển vào thư mục dự án
+# Enter repository directory
 cd Coffee-Protect-Source
 
-# 3. Biên dịch file JAR
+# Build with Maven
 mvn clean package
 ```
 
-File `.jar` thành phẩm sẽ xuất hiện tại thư mục `target/CoffeeProtect-2.5.6.jar`.
-
----
-
-## 👨‍💻 Tác giả & Bản quyền (Credits)
-* **Author**: Nguyen ([@bb99kra](https://github.com/bb99kra))
-* **Compatibility**: Minecraft 1.20 - 1.21.x (Paper, Leaf, Purpur, Folia).
+</div>
