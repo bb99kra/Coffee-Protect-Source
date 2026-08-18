@@ -7,7 +7,7 @@
 package me.nik.coffeeprotect;
 
 import me.nik.coffeeprotect.CoffeeProtect;
-import me.nik.coffeeprotect.CP_TM;
+import me.nik.coffeeprotect.UserData;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class CP_Z9
@@ -21,7 +21,7 @@ extends BukkitRunnable {
     }
 
     public void run() {
-        this.CP_W.CP_F().CP_O().values().forEach(CP_TM::CP_W);
+        this.CP_W.CP_F().CP_O().values().forEach(UserData::CP_W);
     }
 
     public static void CP_M(boolean bl) {

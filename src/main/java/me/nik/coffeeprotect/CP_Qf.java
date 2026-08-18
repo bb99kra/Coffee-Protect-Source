@@ -37,7 +37,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
 import me.nik.coffeeprotect.CoffeeProtect;
-import me.nik.coffeeprotect.CP_L0;
+import me.nik.coffeeprotect.NettyPacketDecoder;
 import me.nik.coffeeprotect.CP_Oq;
 import me.nik.coffeeprotect.CP_jR;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.util.CP_Lw;
@@ -189,7 +189,7 @@ Listener {
                         }
                         if (string == null) break block9;
                         if (channelHandler == null) break block10;
-                        channelPipeline2.addAfter((String)((Object)CP_Qf.a("p", (int)19626, (long)(0x2CA6105DE23A14E2L ^ l))), (String)((Object)CP_Qf.a("p", (int)13136, (long)(0x5CF181D64161EB1FL ^ l))), (ChannelHandler)new CP_L0(player));
+                        channelPipeline2.addAfter((String)((Object)CP_Qf.a("p", (int)19626, (long)(0x2CA6105DE23A14E2L ^ l))), (String)((Object)CP_Qf.a("p", (int)13136, (long)(0x5CF181D64161EB1FL ^ l))), (ChannelHandler)new NettyPacketDecoder(player));
                         if (string != null) break block6;
                     }
                     channelPipeline = channelPipeline2;
@@ -201,7 +201,7 @@ Listener {
                 channelPipeline = channelPipeline2;
                 callSite = CP_Qf.a("p", (int)979, (long)(0x6ACFE9C664455B9FL ^ l));
             }
-            channelPipeline.addAfter((String)((Object)callSite), (String)((Object)CP_Qf.a("p", (int)13136, (long)(0x5CF181D64161EB1FL ^ l))), (ChannelHandler)new CP_L0(player));
+            channelPipeline.addAfter((String)((Object)callSite), (String)((Object)CP_Qf.a("p", (int)13136, (long)(0x5CF181D64161EB1FL ^ l))), (ChannelHandler)new NettyPacketDecoder(player));
         }
     }
 

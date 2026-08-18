@@ -34,7 +34,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
 import me.nik.coffeeprotect.CoffeeProtect;
-import me.nik.coffeeprotect.CP_TM;
+import me.nik.coffeeprotect.UserData;
 import me.nik.coffeeprotect.CP_rW;
 import me.nik.coffeeprotect.CP_vF;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_s;
@@ -75,13 +75,13 @@ implements Listener {
                 String string4;
                 String string5;
                 block25: {
-                    CP_TM ilIlTM;
+                    UserData ilIlTM;
                     Player player;
                     block24: {
                         l = a ^ 0x5495C3295E67L;
                         player = playerLoginEvent.getPlayer();
                         stringArray = CP_vF.CP_o();
-                        CP_TM ilIlTM2 = this.CP_i.CP_F().CP_R(player);
+                        UserData ilIlTM2 = this.CP_i.CP_F().CP_R(player);
                         try {
                             ilIlTM = ilIlTM2;
                             if (stringArray == null) break block24;

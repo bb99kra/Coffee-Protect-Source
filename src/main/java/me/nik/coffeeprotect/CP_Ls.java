@@ -18,43 +18,43 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
 import me.nik.coffeeprotect.CoffeeProtect;
-import me.nik.coffeeprotect.CP_TM;
-import me.nik.coffeeprotect.CP_TV;
+import me.nik.coffeeprotect.UserData;
+import me.nik.coffeeprotect.CheckResult;
 import me.nik.coffeeprotect.CP_fQ;
 import me.nik.coffeeprotect.CP_oI;
-import me.nik.coffeeprotect.CP_u4;
-import me.nik.coffeeprotect.CP_u6;
-import me.nik.coffeeprotect.CP_u7;
-import me.nik.coffeeprotect.CP_uB;
-import me.nik.coffeeprotect.CP_uE;
-import me.nik.coffeeprotect.CP_uK;
-import me.nik.coffeeprotect.CP_uL;
-import me.nik.coffeeprotect.CP_uM;
-import me.nik.coffeeprotect.CP_uQ;
-import me.nik.coffeeprotect.CP_uS;
-import me.nik.coffeeprotect.CP_uT;
-import me.nik.coffeeprotect.CP_uV;
-import me.nik.coffeeprotect.CP_uX;
-import me.nik.coffeeprotect.CP_ua;
-import me.nik.coffeeprotect.CP_ub;
-import me.nik.coffeeprotect.CP_uf;
-import me.nik.coffeeprotect.CP_ug;
-import me.nik.coffeeprotect.CP_uk;
-import me.nik.coffeeprotect.CP_ul;
-import me.nik.coffeeprotect.CP_ur;
-import me.nik.coffeeprotect.CP_us;
-import me.nik.coffeeprotect.CP_uu;
-import me.nik.coffeeprotect.CP_uw;
-import me.nik.coffeeprotect.CP_ux;
-import me.nik.coffeeprotect.CP_uy;
-import me.nik.coffeeprotect.CP_uz;
+import me.nik.coffeeprotect.InvalidRecipeCheck;
+import me.nik.coffeeprotect.InvalidPickItemCheck;
+import me.nik.coffeeprotect.InvalidPositionCheck;
+import me.nik.coffeeprotect.InvalidSelectBundleItemCheck;
+import me.nik.coffeeprotect.InvalidAbilitiesCheck;
+import me.nik.coffeeprotect.InvalidCustomPayloadCheck;
+import me.nik.coffeeprotect.InvalidHeldItemChangeCheck;
+import me.nik.coffeeprotect.InvalidSettingsCheck;
+import me.nik.coffeeprotect.InvalidSteerVehicleCheck;
+import me.nik.coffeeprotect.InvalidEntityActionCheck;
+import me.nik.coffeeprotect.InvalidWindowClickCheck;
+import me.nik.coffeeprotect.Check;
+import me.nik.coffeeprotect.InvalidNameItemCheck;
+import me.nik.coffeeprotect.InvalidBeaconCheck;
+import me.nik.coffeeprotect.InvalidItemCheck;
+import me.nik.coffeeprotect.InvalidInteractCheck;
+import me.nik.coffeeprotect.InvalidSequenceCheck;
+import me.nik.coffeeprotect.InvalidChatCheck;
+import me.nik.coffeeprotect.InvalidTabCompleteCheck;
+import me.nik.coffeeprotect.InvalidCreativeSlotCheck;
+import me.nik.coffeeprotect.InvalidSignCheck;
+import me.nik.coffeeprotect.InvalidBlockPlacementCheck;
+import me.nik.coffeeprotect.InvalidSpectateCheck;
+import me.nik.coffeeprotect.InvalidSelectTradeCheck;
+import me.nik.coffeeprotect.InvalidChunkBatchAckCheck;
+import me.nik.coffeeprotect.InvalidDebugSubscriptionRequestCheck;
 import me.nik.coffeeprotect.CP_yP;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.event.PacketReceiveEvent;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_s;
 
 public class CP_Ls {
-    private final CP_TM CP_F;
-    private CP_uV[] CP_v;
+    private final UserData CP_F;
+    private Check[] CP_v;
     private int CP_p;
     private boolean CP_I;
     private static final long a;
@@ -63,16 +63,16 @@ public class CP_Ls {
     private static final Map d;
     private static transient /* synthetic */ String FKnIHhbbSs = "4ke1LtZcTsZhhrNjbc5YgpMFiBc3gyeJo7/AqXBycJU=";
 
-    public CP_Ls(CP_TM ilIlTM) {
+    public CP_Ls(UserData ilIlTM) {
         this.CP_F = ilIlTM;
         this.CP_UnderScore();
     }
 
-    public CP_TV CP_h(PacketReceiveEvent packetReceiveEvent) {
-        CP_TV ilIlTV;
+    public CheckResult CP_h(PacketReceiveEvent packetReceiveEvent) {
+        CheckResult ilIlTV;
         block2: {
             long l = a ^ 0x4030BC5ADA63L;
-            CP_TV ilIlTV2 = null;
+            CheckResult ilIlTV2 = null;
             String string = CP_oI.CP_n();
             CP_yP ilIlyP = new CP_yP();
             for (int i = 0; i < this.CP_p; ++i) {
@@ -91,44 +91,44 @@ public class CP_Ls {
 
     public void CP_UnderScore() {
         long l = a ^ 0x48B20D4666F8L;
-        CP_uV[] ilIluVArray = new CP_uV[CP_Ls.a("f", (int)263, (long)(0x56146EB35226DE5AL ^ l))];
-        ilIluVArray[0] = new CP_ub(this.CP_F);
-        ilIluVArray[1] = new CP_uu(this.CP_F);
-        ilIluVArray[2] = new CP_ug(this.CP_F);
-        ilIluVArray[3] = new CP_uT(this.CP_F);
-        ilIluVArray[4] = new CP_u7(this.CP_F);
-        ilIluVArray[5] = new CP_ul(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)7869, (long)(0x27DFE2D13D93C1F2L ^ l))] = new CP_uf(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)18666, (long)(0x6CE2F6A8777817B9L ^ l))] = new CP_uw(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)25466, (long)(0xFEBCCE9922A3C23L ^ l))] = new CP_uE(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)22350, (long)(0x49DCA63CA0FE081BL ^ l))] = new CP_uk(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)20423, (long)(0x41CCF49D92049098L ^ l))] = new CP_uz(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)11118, (long)(0x39DAB138200A743FL ^ l))] = new CP_uy(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)32152, (long)(0x62E70EF01EFB22D5L ^ l))] = new CP_uB(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)19294, (long)(0x3FB8A0960EB91402L ^ l))] = new CP_ux(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)25167, (long)(0x42A8EB0D5D61BD18L ^ l))] = new CP_u4(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)28072, (long)(0x37E350B58ACC32FAL ^ l))] = new CP_ua(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)10544, (long)(0x3BDC899AECB07668L ^ l))] = new CP_u6(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)15785, (long)(0x28FFA9B2683662F2L ^ l))] = new CP_uX(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)25484, (long)(0xD9340FE0A3E3CC2L ^ l))] = new CP_uQ(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)16964, (long)(0x567D917152991D14L ^ l))] = new CP_uM(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)29694, (long)(0x5FB2A7754AB7ACA8L ^ l))] = new CP_ur(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)17919, (long)(0x5AE4BB6846699AB3L ^ l))] = new CP_uK(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)7359, (long)(0x2F27FC78DDDE43E5L ^ l))] = new CP_uS(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)19462, (long)(0x1732E8067CFF9352L ^ l))] = new CP_us(this.CP_F);
-        ilIluVArray[CP_Ls.a("f", (int)11822, (long)(0x5A6D38B677627170L ^ l))] = new CP_uL(this.CP_F);
+        Check[] ilIluVArray = new Check[CP_Ls.a("f", (int)263, (long)(0x56146EB35226DE5AL ^ l))];
+        ilIluVArray[0] = new InvalidItemCheck(this.CP_F);
+        ilIluVArray[1] = new InvalidBlockPlacementCheck(this.CP_F);
+        ilIluVArray[2] = new InvalidSequenceCheck(this.CP_F);
+        ilIluVArray[3] = new InvalidWindowClickCheck(this.CP_F);
+        ilIluVArray[4] = new InvalidPositionCheck(this.CP_F);
+        ilIluVArray[5] = new InvalidTabCompleteCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)7869, (long)(0x27DFE2D13D93C1F2L ^ l))] = new InvalidInteractCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)18666, (long)(0x6CE2F6A8777817B9L ^ l))] = new InvalidSpectateCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)25466, (long)(0xFEBCCE9922A3C23L ^ l))] = new InvalidAbilitiesCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)22350, (long)(0x49DCA63CA0FE081BL ^ l))] = new InvalidChatCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)20423, (long)(0x41CCF49D92049098L ^ l))] = new InvalidDebugSubscriptionRequestCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)11118, (long)(0x39DAB138200A743FL ^ l))] = new InvalidChunkBatchAckCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)32152, (long)(0x62E70EF01EFB22D5L ^ l))] = new InvalidSelectBundleItemCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)19294, (long)(0x3FB8A0960EB91402L ^ l))] = new InvalidSelectTradeCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)25167, (long)(0x42A8EB0D5D61BD18L ^ l))] = new InvalidRecipeCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)28072, (long)(0x37E350B58ACC32FAL ^ l))] = new InvalidBeaconCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)10544, (long)(0x3BDC899AECB07668L ^ l))] = new InvalidPickItemCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)15785, (long)(0x28FFA9B2683662F2L ^ l))] = new InvalidNameItemCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)25484, (long)(0xD9340FE0A3E3CC2L ^ l))] = new InvalidSteerVehicleCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)16964, (long)(0x567D917152991D14L ^ l))] = new InvalidSettingsCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)29694, (long)(0x5FB2A7754AB7ACA8L ^ l))] = new InvalidCreativeSlotCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)17919, (long)(0x5AE4BB6846699AB3L ^ l))] = new InvalidCustomPayloadCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)7359, (long)(0x2F27FC78DDDE43E5L ^ l))] = new InvalidEntityActionCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)19462, (long)(0x1732E8067CFF9352L ^ l))] = new InvalidSignCheck(this.CP_F);
+        ilIluVArray[CP_Ls.a("f", (int)11822, (long)(0x5A6D38B677627170L ^ l))] = new InvalidHeldItemChangeCheck(this.CP_F);
         this.CP_K(ilIluVArray);
         if (this.CP_I) {
-            this.CP_v = (CP_uV[])Arrays.stream(this.CP_v).filter(ilIluV -> ilIluV.getClass().isAnnotationPresent(CP_fQ.class)).toArray(CP_uV[]::new);
+            this.CP_v = (Check[])Arrays.stream(this.CP_v).filter(ilIluV -> ilIluV.getClass().isAnnotationPresent(CP_fQ.class)).toArray(Check[]::new);
             this.CP_p = 1;
         }
     }
 
-    private void CP_K(CP_uV ... ilIluVArray) {
+    private void CP_K(Check ... ilIluVArray) {
         long l = a ^ 0x462F9BE03F5BL;
-        this.CP_v = new CP_uV[0];
+        this.CP_v = new Check[0];
         this.CP_p = 0;
-        for (CP_uV ilIluV : ilIluVArray) {
+        for (Check ilIluV : ilIluVArray) {
             if (this.CP_F != null && (!ilIluV.CP_b() || this.CP_F(ilIluV))) continue;
             this.CP_v = Arrays.copyOf(this.CP_v, this.CP_p + 1);
             this.CP_v[this.CP_p] = ilIluV;
@@ -136,7 +136,7 @@ public class CP_Ls {
         }
     }
 
-    private boolean CP_F(CP_uV ilIluV) {
+    private boolean CP_F(Check ilIluV) {
         long l = a ^ 0x6D9FFD07E53L;
         if (this.CP_I) {
             return true;
@@ -147,7 +147,7 @@ public class CP_Ls {
         return false;
     }
 
-    public CP_uV[] CP_U() {
+    public Check[] CP_U() {
         return this.CP_v;
     }
 

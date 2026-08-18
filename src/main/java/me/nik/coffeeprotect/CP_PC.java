@@ -28,9 +28,9 @@ import me.nik.coffeeprotect.CoffeeProtect;
 import me.nik.coffeeprotect.CP_AK;
 import me.nik.coffeeprotect.CP_Oq;
 import me.nik.coffeeprotect.CP_Qb;
-import me.nik.coffeeprotect.CP_TM;
+import me.nik.coffeeprotect.UserData;
 import me.nik.coffeeprotect.CP_Z6;
-import me.nik.coffeeprotect.CP_fF;
+import me.nik.coffeeprotect.CheckException;
 import me.nik.coffeeprotect.CP_rW;
 import me.nik.coffeeprotect.CP_vF;
 import me.nik.coffeeprotect.CP_xi;
@@ -71,7 +71,7 @@ extends CP_Pw {
                 CP_vF.CP_F(new String[4]);
             }
         }
-        catch (CP_fF ilIlfF) {
+        catch (CheckException ilIlfF) {
             throw CP_PC.a(ilIlfF);
         }
     }
@@ -231,7 +231,7 @@ lbl65:
                                         throw CP_PC.a(v18);
                                     }
                                 }
-                                throw new CP_fF("");
+                                throw new CheckException("");
                             }
                             catch (Exception v19) {
                                 throw CP_PC.a(v19);
@@ -263,11 +263,11 @@ lbl65:
                     throw CP_PC.a(v21);
                 }
             }
-            CP_Qb.CP_y((Runnable)LambdaMetafactory.metafactory(null, null, null, ()V, lambda$onPacketReceive$2(me.nik.coffeeprotect.CP_TM java.lang.String org.bukkit.entity.Player ), ()V)((CP_PC)this, (CP_TM)var10_8, (String)var9_10, (Player)var7_4), (long)CP_PC.b("u", (int)22086, (long)(369448858305524102L ^ var2_2)));
+            CP_Qb.CP_y((Runnable)LambdaMetafactory.metafactory(null, null, null, ()V, lambda$onPacketReceive$2(me.nik.coffeeprotect.UserData java.lang.String org.bukkit.entity.Player ), ()V)((CP_PC)this, (UserData)var10_8, (String)var9_10, (Player)var7_4), (long)CP_PC.b("u", (int)22086, (long)(369448858305524102L ^ var2_2)));
         }
     }
 
-    private /* synthetic */ void lambda$onPacketReceive$2(CP_TM ilIlTM, String string, Player player) {
+    private /* synthetic */ void lambda$onPacketReceive$2(UserData ilIlTM, String string, Player player) {
         block28: {
             CallSite callSite;
             String string2;
@@ -293,7 +293,7 @@ lbl65:
                                             if (stringArray == null) break block22;
                                             if (list == null) break block23;
                                         }
-                                        catch (CP_fF ilIlfF) {
+                                        catch (CheckException ilIlfF) {
                                             throw CP_PC.a(ilIlfF);
                                         }
                                         list = object;
@@ -304,7 +304,7 @@ lbl65:
                                         if (!bl) break block25;
                                         break block23;
                                     }
-                                    catch (CP_fF ilIlfF) {
+                                    catch (CheckException ilIlfF) {
                                         throw CP_PC.a(ilIlfF);
                                     }
                                 }
@@ -315,7 +315,7 @@ lbl65:
                                     if (stringArray == null) break block26;
                                     if (!bl) break block23;
                                 }
-                                catch (CP_fF ilIlfF) {
+                                catch (CheckException ilIlfF) {
                                     throw CP_PC.a(ilIlfF);
                                 }
                                 CP_Qb.CP_L(() -> {
@@ -324,7 +324,7 @@ lbl65:
                                 });
                                 return;
                             }
-                            catch (CP_fF ilIlfF) {
+                            catch (CheckException ilIlfF) {
                                 throw CP_PC.a(ilIlfF);
                             }
                         }
@@ -336,19 +336,19 @@ lbl65:
                                 if (stringArray == null) break block27;
                                 if (!bl) break block28;
                             }
-                            catch (CP_fF ilIlfF) {
+                            catch (CheckException ilIlfF) {
                                 throw CP_PC.a(ilIlfF);
                             }
                             string2 = string;
                             callSite = CP_PC.a("k", (int)203, (long)(0x69F2185493BCC557L ^ l));
                             if (stringArray == null) break block29;
                         }
-                        catch (CP_fF ilIlfF) {
+                        catch (CheckException ilIlfF) {
                             throw CP_PC.a(ilIlfF);
                         }
                         bl = string2.equals(callSite);
                     }
-                    catch (CP_fF ilIlfF) {
+                    catch (CheckException ilIlfF) {
                         throw CP_PC.a(ilIlfF);
                     }
                 }
@@ -356,13 +356,13 @@ lbl65:
                     try {
                         if (bl && stringArray != null) break block28;
                     }
-                    catch (CP_fF ilIlfF) {
+                    catch (CheckException ilIlfF) {
                         throw CP_PC.a(ilIlfF);
                     }
                     string2 = CP_xi.CLIENT_ALERT.CP_F().replace((CharSequence)((Object)CP_PC.a("k", (int)405, (long)(0x26E787173B4FC40DL ^ l))), player.getName());
                     callSite = CP_PC.a("k", (int)3737, (long)(0x7B9A53040C1B4B04L ^ l));
                 }
-                catch (CP_fF ilIlfF) {
+                catch (CheckException ilIlfF) {
                     throw CP_PC.a(ilIlfF);
                 }
             }
@@ -378,7 +378,7 @@ lbl65:
                             continue;
                         }
                     }
-                    catch (CP_fF ilIlfF) {
+                    catch (CheckException ilIlfF) {
                         throw CP_PC.a(ilIlfF);
                     }
                     player2 = player3;
@@ -403,7 +403,7 @@ lbl65:
                         if (stringArray == null) break block6;
                         if (player2 == null) break block7;
                     }
-                    catch (CP_fF ilIlfF) {
+                    catch (CheckException ilIlfF) {
                         throw CP_PC.a(ilIlfF);
                     }
                     player2 = player;
@@ -413,12 +413,12 @@ lbl65:
                         if (stringArray == null) break block8;
                         if (!player2.isOnline()) break block7;
                     }
-                    catch (CP_fF ilIlfF) {
+                    catch (CheckException ilIlfF) {
                         throw CP_PC.a(ilIlfF);
                     }
                     player2 = player;
                 }
-                catch (CP_fF ilIlfF) {
+                catch (CheckException ilIlfF) {
                     throw CP_PC.a(ilIlfF);
                 }
             }

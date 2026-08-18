@@ -25,7 +25,7 @@ import javax.crypto.spec.IvParameterSpec;
 import me.nik.coffeeprotect.CoffeeProtect;
 import me.nik.coffeeprotect.CP_Cz;
 import me.nik.coffeeprotect.CP_Oq;
-import me.nik.coffeeprotect.CP_TM;
+import me.nik.coffeeprotect.UserData;
 import me.nik.coffeeprotect.CP_vF;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_s;
 import org.bukkit.Material;
@@ -55,9 +55,9 @@ implements Listener {
     @EventHandler(priority=EventPriority.HIGHEST, ignoreCancelled=true)
     public void CP_n(PlayerInteractEvent playerInteractEvent) {
         block9: {
-            CP_TM ilIlTM;
+            UserData ilIlTM;
             block10: {
-                CP_TM ilIlTM2;
+                UserData ilIlTM2;
                 block11: {
                     Block block;
                     PlayerInteractEvent playerInteractEvent2;

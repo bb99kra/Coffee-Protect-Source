@@ -31,11 +31,11 @@ import me.nik.coffeeprotect.CP_Li;
 import me.nik.coffeeprotect.CP_Ls;
 import me.nik.coffeeprotect.CP_O6;
 import me.nik.coffeeprotect.CP_Og;
-import me.nik.coffeeprotect.CP_TM;
+import me.nik.coffeeprotect.UserData;
 import me.nik.coffeeprotect.CP_Tz;
 import me.nik.coffeeprotect.CP_fb;
 import me.nik.coffeeprotect.CP_rW;
-import me.nik.coffeeprotect.CP_uV;
+import me.nik.coffeeprotect.Check;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.protocol.CP_u9;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_s;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.PacketWrapper;
@@ -47,7 +47,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class CP_O7
 extends CP_O6 {
-    private static final CP_uV[] CP_e;
+    private static final Check[] CP_e;
     private static final long c;
     private static final String[] h;
     private static final String[] i;
@@ -103,7 +103,7 @@ extends CP_O6 {
                     var8_7.CP_R();
                     var8_7.CP_H();
                     this.CP_A.CP_R().CP_m();
-                    this.CP_A.CP_F().CP_O().values().forEach((Consumer<CP_TM>)LambdaMetafactory.metafactory(null, null, null, (Ljava/lang/Object;)V, lambda$handleMenu$0(me.nik.coffeeprotect.CP_TM ), (Lme/nik/coffeeprotect/CP_TM;)V)());
+                    this.CP_A.CP_F().CP_O().values().forEach((Consumer<UserData>)LambdaMetafactory.metafactory(null, null, null, (Ljava/lang/Object;)V, lambda$handleMenu$0(me.nik.coffeeprotect.UserData ), (Lme/nik/coffeeprotect/UserData;)V)());
                     this.getInventory().clear();
                     this.CP_X();
                     if (var4_4 != 0) break;
@@ -181,13 +181,13 @@ lbl58:
             long l = c ^ 0x1F88A3EEED0AL;
             this.CP_s();
             arrayList2 = new ArrayList<String>();
-            CP_uV[] ilIluVArray = CP_e;
+            Check[] ilIluVArray = CP_e;
             int n3 = ilIluVArray.length;
             int n4 = 0;
             n2 = CP_u9.CP_X();
             while (n4 < n3) {
                 block11: {
-                    CP_uV ilIluV = ilIluVArray[n4];
+                    Check ilIluV = ilIluVArray[n4];
                     ArrayList<String> arrayList3 = new ArrayList<String>();
                     arrayList3.add("");
                     arrayList = arrayList3;
@@ -243,7 +243,7 @@ lbl58:
         }
     }
 
-    private static /* synthetic */ void lambda$handleMenu$0(CP_TM ilIlTM) {
+    private static /* synthetic */ void lambda$handleMenu$0(UserData ilIlTM) {
         ilIlTM.CP_G().CP_UnderScore();
     }
 

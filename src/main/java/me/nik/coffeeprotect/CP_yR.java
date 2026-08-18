@@ -21,7 +21,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
 import me.nik.coffeeprotect.CP_Li;
-import me.nik.coffeeprotect.CP_uV;
+import me.nik.coffeeprotect.Check;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_s;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.PacketWrapper;
 
@@ -52,7 +52,7 @@ public final class CP_yR {
                         block16: {
                             var2_2 = CP_yR.a ^ 25891685574192L;
                             var5_3 = var0.length();
-                            var4_4 = CP_uV.CP_Q();
+                            var4_4 = Check.CP_Q();
                             v0 = Math.abs(var5_3);
                             if (var4_4 == null) {
                                 if (v0 > var1_1) {
@@ -134,7 +134,7 @@ lbl45:
             long l = a ^ 0x1B0407C47791L;
             String[] stringArray2 = stringArray;
             int n2 = stringArray2.length;
-            PacketWrapper[] packetWrapperArray = CP_uV.CP_Q();
+            PacketWrapper[] packetWrapperArray = Check.CP_Q();
             int n3 = 0;
             while (n3 < n2) {
                 String string = stringArray2[n3];
@@ -159,7 +159,7 @@ lbl45:
             long l = a ^ 0x20BEDC16E151L;
             double[] dArray2 = dArray;
             int n = dArray2.length;
-            PacketWrapper[] packetWrapperArray = CP_uV.CP_Q();
+            PacketWrapper[] packetWrapperArray = Check.CP_Q();
             int n2 = 0;
             while (n2 < n) {
                 double d = dArray2[n2];
@@ -184,7 +184,7 @@ lbl45:
      */
     public static boolean CP_j(double d) {
         long l = a ^ 0x314EAE6E9700L;
-        PacketWrapper[] packetWrapperArray = CP_uV.CP_Q();
+        PacketWrapper[] packetWrapperArray = Check.CP_Q();
         int n = Double.isFinite(d);
         if (packetWrapperArray != null) return n != 0;
         if (n == 0) return 1 != 0;
@@ -200,7 +200,7 @@ lbl45:
         block5: {
             long l = a ^ 0x271F731C32B4L;
             float[] fArray2 = fArray;
-            PacketWrapper[] packetWrapperArray = CP_uV.CP_Q();
+            PacketWrapper[] packetWrapperArray = Check.CP_Q();
             int n = fArray2.length;
             int n2 = 0;
             while (n2 < n) {
@@ -218,7 +218,7 @@ lbl45:
             bl = false;
         }
         if (PacketWrapper.CP_z() == null) {
-            CP_uV.CP_x(new PacketWrapper[2]);
+            Check.CP_x(new PacketWrapper[2]);
         }
         return bl;
     }
@@ -229,7 +229,7 @@ lbl45:
      */
     public static boolean CP_R(float f) {
         long l = a ^ 0x172606482484L;
-        PacketWrapper[] packetWrapperArray = CP_uV.CP_Q();
+        PacketWrapper[] packetWrapperArray = Check.CP_Q();
         int n = Float.isFinite(f);
         if (packetWrapperArray != null) return n != 0;
         if (n == 0) return 1 != 0;
@@ -245,7 +245,7 @@ lbl45:
         block4: {
             long l = a ^ 0x25CA89A38000L;
             int[] nArray2 = nArray;
-            PacketWrapper[] packetWrapperArray = CP_uV.CP_Q();
+            PacketWrapper[] packetWrapperArray = Check.CP_Q();
             int n = nArray2.length;
             int n2 = 0;
             while (n2 < n) {
@@ -273,7 +273,7 @@ lbl45:
      */
     public static boolean CP_j(int n) {
         long l = a ^ 0x3247DEBCC085L;
-        PacketWrapper[] packetWrapperArray = CP_uV.CP_Q();
+        PacketWrapper[] packetWrapperArray = Check.CP_Q();
         int n2 = n;
         if (packetWrapperArray != null) return n2 != 0;
         if (n2 == CP_yR.b("w", (int)16753, (long)(0x41314D34C2185F50L ^ l))) return 1 != 0;

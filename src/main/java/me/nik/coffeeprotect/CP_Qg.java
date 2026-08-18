@@ -18,7 +18,7 @@ import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
 import me.nik.coffeeprotect.CoffeeProtect;
 import me.nik.coffeeprotect.CP_Oq;
-import me.nik.coffeeprotect.CP_TM;
+import me.nik.coffeeprotect.UserData;
 import me.nik.coffeeprotect.CP_Z6;
 import me.nik.coffeeprotect.CP_rW;
 import me.nik.coffeeprotect.CP_vF;
@@ -45,8 +45,8 @@ implements Listener {
     public void CP_p(PlayerCommandPreprocessEvent playerCommandPreprocessEvent) {
         String[] stringArray;
         block14: {
-            CP_TM ilIlTM;
-            CP_TM ilIlTM2;
+            UserData ilIlTM;
+            UserData ilIlTM2;
             block13: {
                 Player player;
                 block12: {

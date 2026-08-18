@@ -64,7 +64,7 @@ import me.nik.coffeeprotect.CoffeeProtect;
 import me.nik.coffeeprotect.CP_Cz;
 import me.nik.coffeeprotect.CP_Li;
 import me.nik.coffeeprotect.CP_Oq;
-import me.nik.coffeeprotect.CP_TM;
+import me.nik.coffeeprotect.UserData;
 import me.nik.coffeeprotect.CP_jC;
 import me.nik.coffeeprotect.CP_rB;
 import me.nik.coffeeprotect.CP_rW;
@@ -236,9 +236,9 @@ implements Listener {
     @EventHandler(priority=EventPriority.HIGHEST, ignoreCancelled=true)
     public void CP_H(InventoryClickEvent inventoryClickEvent) {
         block21: {
-            CP_TM ilIlTM;
+            UserData ilIlTM;
             block23: {
-                CP_TM ilIlTM2;
+                UserData ilIlTM2;
                 block24: {
                     String[] stringArray;
                     block22: {
@@ -322,9 +322,9 @@ implements Listener {
     @EventHandler(priority=EventPriority.HIGHEST, ignoreCancelled=true)
     public void CP_P(PlayerInteractEvent playerInteractEvent) {
         block7: {
-            CP_TM ilIlTM;
+            UserData ilIlTM;
             block9: {
-                CP_TM ilIlTM2;
+                UserData ilIlTM2;
                 block10: {
                     String[] stringArray;
                     block8: {
@@ -399,9 +399,9 @@ lbl8:
     @EventHandler(priority=EventPriority.HIGHEST, ignoreCancelled=true)
     public void CP_q(PlayerShearEntityEvent playerShearEntityEvent) {
         block7: {
-            CP_TM ilIlTM;
+            UserData ilIlTM;
             block5: {
-                CP_TM ilIlTM2;
+                UserData ilIlTM2;
                 block6: {
                     long l = a ^ 0x67B727AB0FC2L;
                     ilIlTM2 = this.CP_d.CP_F().CP_R(playerShearEntityEvent.getPlayer());
@@ -503,7 +503,7 @@ lbl12:
                     if (object == null) break block8;
                     object = object2;
                 }
-                l = (l3 = ((CP_TM)object).CP_S() - e) == 0L ? 0 : (l3 < 0L ? -1 : 1);
+                l = (l3 = ((UserData)object).CP_S() - e) == 0L ? 0 : (l3 < 0L ? -1 : 1);
                 if (stringArray == null) break block11;
                 if (l <= 0) break block8;
                 player.kickPlayer((String)((Object)CP_Cq.a("g", (int)29799, (long)(0x82F4157C0BED398L ^ l2))));

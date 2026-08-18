@@ -2,7 +2,8 @@
  * Decompiled with CFR 0.152.
  * 
  * Could not load the following classes:
- *  org.bukkit.Material
+ *  org.bukkit.GameMode
+ *  org.bukkit.entity.Player
  */
 package me.nik.coffeeprotect;
 
@@ -19,78 +20,67 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
+import me.nik.coffeeprotect.CP_Oq;
+import me.nik.coffeeprotect.CP_TE;
+import me.nik.coffeeprotect.UserData;
+import me.nik.coffeeprotect.CheckResult;
+import me.nik.coffeeprotect.CheckInfo;
 import me.nik.coffeeprotect.InvalidPositionCheck;
+import me.nik.coffeeprotect.Check;
+import me.nik.coffeeprotect.CP_yR;
+import me.nik.coffeeprotect.com.github.retrooper.packetevents.event.PacketReceiveEvent;
+import me.nik.coffeeprotect.com.github.retrooper.packetevents.protocol.CP_nN;
+import me.nik.coffeeprotect.com.github.retrooper.packetevents.util.CP_QG;
+import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_bo;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_s;
-import org.bukkit.Material;
+import org.bukkit.GameMode;
+import org.bukkit.entity.Player;
 
-class CP_Oc {
-    private final String CP_U;
-    private final Material CP_t;
-    private static final long a = CP_s.a(-2218670480667929971L, -2104414691239005352L, MethodHandles.lookup().lookupClass()).a(263663197419754L);
-    private static final String[] b;
-    private static final String[] c;
-    private static final Map d;
-    private static transient /* synthetic */ String zDdFFNtZzo = "4ke1LtZcTsZhhrNjbc5YgpMFiBc3gyeJo7/AqXBycJU=";
+@CheckInfo(CP_J="Invalid Interact", CP_M="Checks for invalid interact packets")
+public class InvalidInteractCheck
+extends Check {
+    private static final long b = CP_s.a(2468697650310457394L, 275094828146818516L, MethodHandles.lookup().lookupClass()).a(196778933684497L);
+    private static final String[] d;
+    private static final String[] e;
+    private static final Map f;
+    private static transient /* synthetic */ String NVdxQtUYQN = "4ke1LtZcTsZhhrNjbc5YgpMFiBc3gyeJo7/AqXBycJU=";
 
-    public CP_Oc(String string, Material material) {
-        this.CP_U = string;
-        this.CP_t = material;
+    public InvalidInteractCheck(UserData ilIlTM) {
+        super(ilIlTM, CP_Oq.CHECKS_INVALID_INTERACT_ENABLED.CP_t());
     }
 
-    public CP_Oc(String string) {
-        this.CP_U = string;
-        this.CP_t = null;
-    }
-
-    private static CP_Oc CP_k() {
-        return new CP_Oc(null);
-    }
-
-    private static CP_Oc CP_e(Material material) {
-        long l = a ^ 0x59C2C59CCEEEL;
-        return new CP_Oc((String)((Object)CP_Oc.a("y", (int)6747, (long)(0x1753824765E10610L ^ l))), material);
-    }
-
-    public boolean CP_J() {
-        long l = a ^ 0x4B2A63C8C307L;
-        return this.CP_U == null;
-    }
-
-    public boolean CP_I() {
-        long l = a ^ 0x1182207B146FL;
-        return this.CP_U.equals(CP_Oc.a("y", (int)11546, (long)(0x568BD462ED2C6BD2L ^ l)));
-    }
-
-    public Material CP_l() {
-        return this.CP_t;
-    }
-
-    public String CP_q() {
-        long l = a ^ 0x38545B20C1EBL;
+    @Override
+    public CheckResult CP_h(PacketReceiveEvent packetReceiveEvent) {
+        long l = b ^ 0x6BFF188835D5L;
         String string = InvalidPositionCheck.CP_q();
-        StringBuilder stringBuilder = new StringBuilder();
-        String string2 = this.CP_U;
-        if (string == null) {
-            stringBuilder = stringBuilder.append(string2);
-            string2 = this.CP_t == null ? "" : (String)((Object)CP_Oc.a("y", (int)17810, (long)(0x13FDE148777656DDL ^ l))) + this.CP_t.name() + "]";
+        if (packetReceiveEvent.getPacketType() != CP_nN.INTERACT_ENTITY) {
+            return null;
         }
-        return stringBuilder.append(string2).toString();
-    }
-
-    static CP_Oc CP_O() {
-        return CP_Oc.CP_k();
-    }
-
-    static CP_Oc CP_P(Material material) {
-        return CP_Oc.CP_e(material);
+        CP_bo ilIlbo = new CP_bo(packetReceiveEvent);
+        int n = ilIlbo.CP_UnderScore();
+        if (n < 0) {
+            return new CP_TE(this, (String)((Object)InvalidInteractCheck.a("s", (int)21809, (long)(0x755858BC98A97581L ^ l))));
+        }
+        GameMode gameMode = ((Player)packetReceiveEvent.getPlayer()).getGameMode();
+        if (string == null) {
+            if (gameMode != GameMode.SPECTATOR && n == packetReceiveEvent.getUser().CP_w()) {
+                return new CheckResult(this, (String)((Object)InvalidInteractCheck.a("s", (int)32605, (long)(0x47BCFE06C3DDFECL ^ l))));
+            }
+            gameMode = ilIlbo.CP_A().orElse(null);
+        }
+        CP_QG ilIlQG = (CP_QG)gameMode;
+        if (CP_yR.CP_j(n) || ilIlQG != null && CP_yR.CP_M(ilIlQG.CP_Y(), ilIlQG.CP_g(), ilIlQG.CP_u())) {
+            return new CheckResult(this, (String)((Object)InvalidInteractCheck.a("s", (int)6979, (long)(0x49B7B3A2FD1C3BF0L ^ l))));
+        }
+        return null;
     }
 
     /*
      * Enabled aggressive block sorting
      */
     static {
-        d = new HashMap(13);
-        long l = a ^ 0x3B60F854B35L;
+        f = new HashMap(13);
+        long l = b ^ 0x249F52C7E450L;
         Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
         SecretKeyFactory secretKeyFactory = SecretKeyFactory.getInstance("DES");
         byte[] byArray = new byte[8];
@@ -103,24 +93,24 @@ class CP_Oc {
         cipher.init(2, (Key)secretKeyFactory.generateSecret(new DESKeySpec(byArray2)), new IvParameterSpec(new byte[8]));
         String[] stringArray = new String[3];
         int n = 0;
-        String string = "\u0018\u00d9 \u00e7\u007f\u00e7\u0093Y\u0092\u0002\u0001\u0016\u0084\u00f8\u00b4\u00e7\u0010@'\u00d1\u0084\u00f1\u00a9\u00d6\u00b3[\u00ef1ra^\u00c0\u0003\u0010\u001e3\u0091\u00ef\u00d8;\u0083GD\u0088\u00cbd\u0007\f`\u00b7";
-        int n2 = "\u0018\u00d9 \u00e7\u007f\u00e7\u0093Y\u0092\u0002\u0001\u0016\u0084\u00f8\u00b4\u00e7\u0010@'\u00d1\u0084\u00f1\u00a9\u00d6\u00b3[\u00ef1ra^\u00c0\u0003\u0010\u001e3\u0091\u00ef\u00d8;\u0083GD\u0088\u00cbd\u0007\f`\u00b7".length();
-        int n3 = 16;
+        String string = "V\u0093@E{\u000e5rg\"\u00d5\u0003\u000b\u0098\u00e6}\u00ffY\u0095\u001daR_\u00f7\u00f1&\u0010\u00a4\u00b43\u00a7y )\u0099\t\u0015c\u00d4\u008a\u00f7\u00bb\u0013>\u0017o\u0011\u0000\u00e5m\u007fOi\u00a4\u00f0\u0006anD\u0001\u00d1\u00a74\u00f7# \u00ccLncA\u00de`]\u00a0?\u0013\u00c1\u0001\u00b7\u008fZ\u00d1\u00b7\u00e2\u00c5\u00acp{sp\u008f\u00a6\u0091'\u00ed\u008c\u0084";
+        int n2 = "V\u0093@E{\u000e5rg\"\u00d5\u0003\u000b\u0098\u00e6}\u00ffY\u0095\u001daR_\u00f7\u00f1&\u0010\u00a4\u00b43\u00a7y )\u0099\t\u0015c\u00d4\u008a\u00f7\u00bb\u0013>\u0017o\u0011\u0000\u00e5m\u007fOi\u00a4\u00f0\u0006anD\u0001\u00d1\u00a74\u00f7# \u00ccLncA\u00de`]\u00a0?\u0013\u00c1\u0001\u00b7\u008fZ\u00d1\u00b7\u00e2\u00c5\u00acp{sp\u008f\u00a6\u0091'\u00ed\u008c\u0084".length();
+        int n3 = 32;
         int n4 = -1;
         while (true) {
             int n5 = ++n4;
             byte[] byArray3 = cipher.doFinal(string.substring(n5, n5 + n3).getBytes("ISO-8859-1"));
-            stringArray[n++] = CP_Oc.a(byArray3).intern();
+            stringArray[n++] = InvalidInteractCheck.b(byArray3).intern();
             if ((n4 += n3) >= n2) {
-                b = stringArray;
-                c = new String[3];
+                d = stringArray;
+                e = new String[3];
                 return;
             }
             n3 = string.charAt(n4);
         }
     }
 
-    private static String a(byte[] byArray) {
+    private static String b(byte[] byArray) {
         int n = 0;
         int n2 = byArray.length;
         char[] cArray = new char[n2];
@@ -150,19 +140,19 @@ class CP_Oc {
     }
 
     private static String a(int n, long l) {
-        int n2 = n ^ (int)(l & 0x7FFFL) ^ 0x4F2A;
-        if (c[n2] == null) {
+        int n2 = n ^ (int)(l & 0x7FFFL) ^ 0x169E;
+        if (e[n2] == null) {
             Object[] objectArray;
             try {
                 Long l2 = Thread.currentThread().getId();
-                objectArray = (Object[])d.get(l2);
+                objectArray = (Object[])f.get(l2);
                 if (objectArray == null) {
                     objectArray = new Object[]{Cipher.getInstance("DES/CBC/PKCS5Padding"), SecretKeyFactory.getInstance("DES"), new IvParameterSpec(new byte[8])};
-                    d.put(l2, objectArray);
+                    f.put(l2, objectArray);
                 }
             }
             catch (Exception exception) {
-                throw new RuntimeException("me/nik/coffeeprotect/CP_Oc", exception);
+                throw new RuntimeException("me/nik/coffeeprotect/InvalidInteractCheck", exception);
             }
             byte[] byArray = new byte[8];
             byArray[0] = (byte)(l >>> 56);
@@ -172,16 +162,16 @@ class CP_Oc {
             DESKeySpec dESKeySpec = new DESKeySpec(byArray);
             SecretKey secretKey = ((SecretKeyFactory)objectArray[1]).generateSecret(dESKeySpec);
             ((Cipher)objectArray[0]).init(2, (Key)secretKey, (IvParameterSpec)objectArray[2]);
-            byte[] byArray2 = b[n2].getBytes("ISO-8859-1");
-            CP_Oc.c[n2] = CP_Oc.a(((Cipher)objectArray[0]).doFinal(byArray2));
+            byte[] byArray2 = d[n2].getBytes("ISO-8859-1");
+            InvalidInteractCheck.e[n2] = InvalidInteractCheck.b(((Cipher)objectArray[0]).doFinal(byArray2));
         }
-        return c[n2];
+        return e[n2];
     }
 
     private static Object a(MethodHandles.Lookup lookup, MutableCallSite mutableCallSite, String string, Object[] objectArray) {
         int n = (Integer)objectArray[0];
         long l = (Long)objectArray[1];
-        String string2 = CP_Oc.a(n, l);
+        String string2 = InvalidInteractCheck.a(n, l);
         MethodHandle methodHandle = MethodHandles.constant(String.class, string2);
         mutableCallSite.setTarget(MethodHandles.dropArguments(methodHandle, 0, new Class[]{Integer.TYPE, Long.TYPE}));
         return string2;
@@ -193,7 +183,7 @@ class CP_Oc {
             mutableCallSite.setTarget(MethodHandles.explicitCastArguments(MethodHandles.insertArguments(cfr_ldc_0().asCollector(Object[].class, methodType.parameterCount()), 0, lookup, mutableCallSite, string), methodType));
         }
         catch (Exception exception) {
-            throw new RuntimeException("me/nik/coffeeprotect/CP_Oc" + " : " + string + " : " + methodType.toString(), exception);
+            throw new RuntimeException("me/nik/coffeeprotect/InvalidInteractCheck" + " : " + string + " : " + methodType.toString(), exception);
         }
         return mutableCallSite;
     }
@@ -203,7 +193,7 @@ class CP_Oc {
      */
     static MethodHandle cfr_ldc_0() {
         try {
-            return MethodHandles.lookup().findStatic(CP_Oc.class, "a", MethodType.fromMethodDescriptorString("(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/invoke/MutableCallSite;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;", null));
+            return MethodHandles.lookup().findStatic(InvalidInteractCheck.class, "a", MethodType.fromMethodDescriptorString("(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/invoke/MutableCallSite;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;", null));
         }
         catch (NoSuchMethodException | IllegalAccessException except) {
             throw new IllegalArgumentException(except);

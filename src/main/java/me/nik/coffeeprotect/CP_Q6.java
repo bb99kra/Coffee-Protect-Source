@@ -12,7 +12,7 @@
 package me.nik.coffeeprotect;
 
 import java.lang.invoke.MethodHandles;
-import me.nik.coffeeprotect.CP_OX;
+import me.nik.coffeeprotect.AbstractMenu;
 import me.nik.coffeeprotect.CP_vF;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_s;
 import org.bukkit.Material;
@@ -39,7 +39,7 @@ implements Listener {
                         long l = a ^ 0x4F273917CE5BL;
                         inventoryHolder = inventoryClickEvent.getInventory().getHolder();
                         String[] stringArray = CP_vF.CP_o();
-                        if (!(inventoryHolder instanceof CP_OX)) {
+                        if (!(inventoryHolder instanceof AbstractMenu)) {
                             return;
                         }
                         itemStack = inventoryClickEvent.getCurrentItem();
@@ -56,7 +56,7 @@ implements Listener {
             inventoryClickEvent2 = inventoryClickEvent;
         }
         inventoryClickEvent2.setCancelled(true);
-        CP_OX ilIlOX = (CP_OX)inventoryHolder;
+        AbstractMenu ilIlOX = (AbstractMenu)inventoryHolder;
         ilIlOX.CP_a(inventoryClickEvent);
     }
 }

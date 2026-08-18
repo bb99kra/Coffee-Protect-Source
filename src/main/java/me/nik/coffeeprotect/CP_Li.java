@@ -442,10 +442,10 @@ public final class CP_Li {
                                                     }
                                                     ilIlCg2 = ilIlCg;
                                                     if (string == null) break block19;
-                                                    bl3 = ilIlCg2.CP_N(ComponentTypes.CP_uf);
+                                                    bl3 = ilIlCg2.CP_N(ComponentTypes.InvalidInteractCheck);
                                                 }
                                                 if (bl3) {
-                                                    ilIlCg.CP_e(ComponentTypes.CP_uf);
+                                                    ilIlCg.CP_e(ComponentTypes.InvalidInteractCheck);
                                                 }
                                                 ilIlCg2 = ilIlCg;
                                             }

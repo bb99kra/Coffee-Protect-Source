@@ -23,7 +23,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
 import me.nik.coffeeprotect.CoffeeProtect;
-import me.nik.coffeeprotect.CP_TM;
+import me.nik.coffeeprotect.UserData;
 import me.nik.coffeeprotect.CP_jf;
 import me.nik.coffeeprotect.CP_ju;
 import me.nik.coffeeprotect.CP_x5;
@@ -87,7 +87,7 @@ extends CP_ju {
         if (player == null) {
             return;
         }
-        CP_TM ilIlTM = this.CP_u.CP_F().CP_R(player);
+        UserData ilIlTM = this.CP_u.CP_F().CP_R(player);
         if (bl) {
             if (ilIlTM == null) {
                 return;

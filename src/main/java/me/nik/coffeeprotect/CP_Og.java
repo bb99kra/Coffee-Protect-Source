@@ -25,7 +25,7 @@ import javax.crypto.spec.IvParameterSpec;
 import me.nik.coffeeprotect.CoffeeProtect;
 import me.nik.coffeeprotect.CP_O7;
 import me.nik.coffeeprotect.CP_OB;
-import me.nik.coffeeprotect.CP_OX;
+import me.nik.coffeeprotect.AbstractMenu;
 import me.nik.coffeeprotect.CP_Ox;
 import me.nik.coffeeprotect.CP_Tz;
 import me.nik.coffeeprotect.CP_rW;
@@ -39,7 +39,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class CP_Og
-extends CP_OX {
+extends AbstractMenu {
     private static final long b;
     private static final String[] c;
     private static final String[] e;

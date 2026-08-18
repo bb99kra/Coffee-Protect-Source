@@ -21,7 +21,7 @@ import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
 import me.nik.coffeeprotect.CoffeeProtect;
 import me.nik.coffeeprotect.CP_Oq;
-import me.nik.coffeeprotect.CP_TM;
+import me.nik.coffeeprotect.UserData;
 import me.nik.coffeeprotect.CP_Zl;
 import me.nik.coffeeprotect.CP_rW;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.event.CP_Pw;
@@ -119,7 +119,7 @@ extends CP_Pw {
                                     return;
                                 }
                                 object = this.CP_e.CP_F().CP_R((Player)packetReceiveEvent.getPlayer());
-                                ilIlZl = ((CP_TM)object).CP_p();
+                                ilIlZl = ((UserData)object).CP_p();
                                 long l4 = ilIlZl.CP_R();
                                 if (stringArray == null) break block15;
                                 if (l != l4) break block16;
@@ -135,11 +135,11 @@ extends CP_Pw {
                             }
                             if (stringArray == null) break block18;
                             if (l2 == false) break block16;
-                            l2 = (long)((CP_TM)object).CP_R();
+                            l2 = (long)((UserData)object).CP_R();
                         }
                         if (stringArray == null) break block19;
                         if (l2 != false) break block16;
-                        long l7 = ((CP_TM)object).CP_UnderScore() - CP_PW.a("l", (int)5556, (long)(0x5582234EDDAFD5D0L ^ l3));
+                        long l7 = ((UserData)object).CP_UnderScore() - CP_PW.a("l", (int)5556, (long)(0x5582234EDDAFD5D0L ^ l3));
                         l2 = l7 == 0L ? 0 : (l7 < 0L ? -1 : 1);
                     }
                     if (stringArray == null) break block20;

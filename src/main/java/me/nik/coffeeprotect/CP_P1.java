@@ -31,7 +31,7 @@ import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
 import me.nik.coffeeprotect.CoffeeProtect;
 import me.nik.coffeeprotect.CP_Q3;
-import me.nik.coffeeprotect.CP_fF;
+import me.nik.coffeeprotect.CheckException;
 import me.nik.coffeeprotect.CP_jR;
 import me.nik.coffeeprotect.CP_nH;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.CP_r7;
@@ -77,7 +77,7 @@ implements CP_jR {
                 PacketWrapper.CP_e(new int[3]);
             }
         }
-        catch (CP_fF ilIlfF) {
+        catch (CheckException ilIlfF) {
             throw CP_P1.a(ilIlfF);
         }
     }
@@ -115,13 +115,13 @@ implements CP_jR {
                             if (string == null) break block10;
                             if (ilIlCg2 != null) break block11;
                         }
-                        catch (CP_fF ilIlfF) {
+                        catch (CheckException ilIlfF) {
                             throw CP_P1.a(ilIlfF);
                         }
                         ilIlCg = null;
                         break block12;
                     }
-                    catch (CP_fF ilIlfF) {
+                    catch (CheckException ilIlfF) {
                         throw CP_P1.a(ilIlfF);
                     }
                 }
@@ -155,25 +155,25 @@ implements CP_jR {
                                             }
                                             ** GOTO lbl39
                                         }
-                                        catch (CP_fF v1) {
+                                        catch (CheckException v1) {
                                             throw CP_P1.a(v1);
                                         }
                                         if (v0 /* !! */  != null) {
                                         }
                                         ** GOTO lbl39
                                     }
-                                    catch (CP_fF v2) {
+                                    catch (CheckException v2) {
                                         throw CP_P1.a(v2);
                                     }
                                     v3 = var1_1;
                                     if (var4_3 == null) break block23;
                                 }
-                                catch (CP_fF v4) {
+                                catch (CheckException v4) {
                                     throw CP_P1.a(v4);
                                 }
                                 v0 /* !! */  = v3.getPlayer();
                             }
-                            catch (CP_fF v5) {
+                            catch (CheckException v5) {
                                 throw CP_P1.a(v5);
                             }
                         }
@@ -185,7 +185,7 @@ implements CP_jR {
                             if (var4_3 == null) break block24;
                             if (!v3.isCancelled()) break block25;
                         }
-                        catch (CP_fF v6) {
+                        catch (CheckException v6) {
                             throw CP_P1.a(v6);
                         }
 lbl39:
@@ -193,7 +193,7 @@ lbl39:
 
                         return;
                     }
-                    catch (CP_fF v7) {
+                    catch (CheckException v7) {
                         throw CP_P1.a(v7);
                     }
                 }
@@ -204,7 +204,7 @@ lbl39:
                 v8 = CP_Q3.CP_A[var5_4.ordinal()];
                 if (var4_3 == null) break block26;
             }
-            catch (CP_fF v9) {
+            catch (CheckException v9) {
                 throw CP_P1.a(v9);
             }
             {
@@ -239,7 +239,7 @@ lbl55:
                 return;
             }
         }
-        catch (CP_fF v10) {
+        catch (CheckException v10) {
             throw CP_P1.a(v10);
         }
         var7_6 = (Player)var1_1.getPlayer();
@@ -259,12 +259,12 @@ lbl55:
                         if (string == null) break block4;
                         if (!ilIlP1.CP_o) break block5;
                     }
-                    catch (CP_fF ilIlfF) {
+                    catch (CheckException ilIlfF) {
                         throw CP_P1.a(ilIlfF);
                     }
                     return CP_nH.ALREADY_RUNNING;
                 }
-                catch (CP_fF ilIlfF) {
+                catch (CheckException ilIlfF) {
                     throw CP_P1.a(ilIlfF);
                 }
             }
@@ -286,12 +286,12 @@ lbl55:
                         if (string == null) break block4;
                         if (ilIlP1.CP_o) break block5;
                     }
-                    catch (CP_fF ilIlfF) {
+                    catch (CheckException ilIlfF) {
                         throw CP_P1.a(ilIlfF);
                     }
                     return CP_nH.NOT_RUNNING;
                 }
-                catch (CP_fF ilIlfF) {
+                catch (CheckException ilIlfF) {
                     throw CP_P1.a(ilIlfF);
                 }
             }
@@ -318,7 +318,7 @@ lbl55:
                 CP_nH.CP_X("GgJNOc");
             }
         }
-        catch (CP_fF ilIlfF) {
+        catch (CheckException ilIlfF) {
             throw CP_P1.a(ilIlfF);
         }
     }
@@ -444,7 +444,7 @@ lbl55:
             }
             catch (IOException iOException) {
                 this.CP_q();
-                throw new CP_fF((String)((Object)CP_P1.a("k", (int)24420, (long)(0x12AB18A8CABA4F23L ^ l))) + iOException.getLocalizedMessage());
+                throw new CheckException((String)((Object)CP_P1.a("k", (int)24420, (long)(0x12AB18A8CABA4F23L ^ l))) + iOException.getLocalizedMessage());
             }
         }
     }

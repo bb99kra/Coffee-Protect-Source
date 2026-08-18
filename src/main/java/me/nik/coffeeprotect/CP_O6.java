@@ -20,14 +20,14 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
 import me.nik.coffeeprotect.CoffeeProtect;
-import me.nik.coffeeprotect.CP_OX;
+import me.nik.coffeeprotect.AbstractMenu;
 import me.nik.coffeeprotect.CP_Tz;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_s;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.PacketWrapper;
 import org.bukkit.Material;
 
 public abstract class CP_O6
-extends CP_OX {
+extends AbstractMenu {
     protected int CP_UnderScore;
     protected int CP_S;
     protected int CP_t;

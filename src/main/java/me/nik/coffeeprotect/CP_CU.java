@@ -9,7 +9,7 @@ package me.nik.coffeeprotect;
 
 import java.lang.invoke.MethodHandles;
 import java.util.UUID;
-import me.nik.coffeeprotect.CP_u7;
+import me.nik.coffeeprotect.InvalidPositionCheck;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_s;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.PacketWrapper;
 import org.bukkit.Bukkit;
@@ -29,7 +29,7 @@ class CP_CU {
         this.CP_Y = d;
         this.CP_h = d2;
         this.CP_R = d3;
-        String string = CP_u7.CP_q();
+        String string = InvalidPositionCheck.CP_q();
         if (string != null) {
             PacketWrapper.CP_e(new int[5]);
         }

@@ -4,7 +4,7 @@
 package me.nik.coffeeprotect;
 
 import java.lang.invoke.MethodHandles;
-import me.nik.coffeeprotect.CP_u7;
+import me.nik.coffeeprotect.InvalidPositionCheck;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_s;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.PacketWrapper;
 
@@ -20,9 +20,9 @@ class CP_iW {
         this.CP_T = n;
         this.CP_G = n2;
         this.CP_w = System.currentTimeMillis();
-        String string = CP_u7.CP_q();
+        String string = InvalidPositionCheck.CP_q();
         if (PacketWrapper.CP_z() == null) {
-            CP_u7.CP_p("N9uOX");
+            InvalidPositionCheck.CP_p("N9uOX");
         }
     }
 
@@ -36,7 +36,7 @@ class CP_iW {
      */
     public boolean CP_P(int n, int n2) {
         long l = a ^ 0x5929B2684333L;
-        String string = CP_u7.CP_q();
+        String string = InvalidPositionCheck.CP_q();
         boolean bl = n;
         int n3 = this.CP_T;
         if (string == null) {

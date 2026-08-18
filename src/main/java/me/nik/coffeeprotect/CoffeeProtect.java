@@ -63,7 +63,7 @@ import me.nik.coffeeprotect.CP_fJ;
 import me.nik.coffeeprotect.CP_hO;
 import me.nik.coffeeprotect.CP_hs;
 import me.nik.coffeeprotect.CP_iZ;
-import me.nik.coffeeprotect.CP_nL;
+import me.nik.coffeeprotect.CoffeePlaceholderExpansion;
 import me.nik.coffeeprotect.CP_q9;
 import me.nik.coffeeprotect.CP_qb;
 import me.nik.coffeeprotect.CP_vF;
@@ -339,7 +339,7 @@ lbl79:
                                                                                             this.CP_x.CP_C();
                                                                                             this.CP_j.CP_C();
                                                                                             this.CP_S.CP_C();
-                                                                                            new CP_nL().initialize();
+                                                                                            new CoffeePlaceholderExpansion().initialize();
                                                                                             bl3 = CP_Oq.ENTITY_LIMIT_ENABLED.CP_t();
                                                                                             if (packetWrapperArray != null) break block51;
                                                                                             if (!bl3) break block52;

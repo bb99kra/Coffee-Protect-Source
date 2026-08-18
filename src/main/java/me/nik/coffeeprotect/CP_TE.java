@@ -3,19 +3,19 @@
  */
 package me.nik.coffeeprotect;
 
-import me.nik.coffeeprotect.CP_TV;
-import me.nik.coffeeprotect.CP_uV;
+import me.nik.coffeeprotect.CheckResult;
+import me.nik.coffeeprotect.Check;
 
 public class CP_TE
-extends CP_TV {
+extends CheckResult {
     private static int[] CP_E;
     private static transient /* synthetic */ String hHMTgeyCkM = "4ke1LtZcTsZhhrNjbc5YgpMFiBc3gyeJo7/AqXBycJU=";
 
-    public CP_TE(CP_uV ilIluV, String string) {
+    public CP_TE(Check ilIluV, String string) {
         super(ilIluV, string);
     }
 
-    public CP_TE(CP_uV ilIluV) {
+    public CP_TE(Check ilIluV) {
         super(ilIluV, null);
     }
 

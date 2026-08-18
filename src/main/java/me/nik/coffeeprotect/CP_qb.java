@@ -26,7 +26,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
 import me.nik.coffeeprotect.CoffeeProtect;
-import me.nik.coffeeprotect.CP_fF;
+import me.nik.coffeeprotect.CheckException;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_l;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_s;
 import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.PacketWrapper;
@@ -117,7 +117,7 @@ lbl14:
                     ** GOTO lbl14
                 }
             }
-            catch (CP_fF v2) {
+            catch (CheckException v2) {
                 throw CP_qb.a(v2);
             }
         }
@@ -478,7 +478,7 @@ lbl14:
             method.invoke((Object)Bukkit.getPluginManager(), new Object[]{CoffeeProtect.CP_J()});
         }
         catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException reflectiveOperationException) {
-            throw new CP_fF((String)((Object)CP_qb.a("n", (int)9201, (long)(0x3C04F04D1794A242L ^ l))) + reflectiveOperationException.getLocalizedMessage());
+            throw new CheckException((String)((Object)CP_qb.a("n", (int)9201, (long)(0x3C04F04D1794A242L ^ l))) + reflectiveOperationException.getLocalizedMessage());
         }
     }
 

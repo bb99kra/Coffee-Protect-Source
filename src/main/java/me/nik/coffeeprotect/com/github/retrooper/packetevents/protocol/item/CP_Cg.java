@@ -392,7 +392,7 @@ public class CP_Cg {
                                                 catch (IllegalArgumentException illegalArgumentException) {
                                                     throw CP_Cg.a(illegalArgumentException);
                                                 }
-                                                bl2 = this.CP_N(ComponentTypes.CP_uM);
+                                                bl2 = this.CP_N(ComponentTypes.InvalidSettingsCheck);
                                                 if (bl) break block28;
                                             }
                                             catch (IllegalArgumentException illegalArgumentException) {
@@ -417,7 +417,7 @@ public class CP_Cg {
                                     catch (IllegalArgumentException illegalArgumentException) {
                                         throw CP_Cg.a(illegalArgumentException);
                                     }
-                                    bl2 = this.CP_N(ComponentTypes.CP_uy);
+                                    bl2 = this.CP_N(ComponentTypes.InvalidChunkBatchAckCheck);
                                 }
                                 catch (IllegalArgumentException illegalArgumentException) {
                                     throw CP_Cg.a(illegalArgumentException);
@@ -551,7 +551,7 @@ public class CP_Cg {
                                                 catch (IllegalArgumentException illegalArgumentException) {
                                                     throw CP_Cg.a(illegalArgumentException);
                                                 }
-                                                int n3 = this.CP_J(ComponentTypes.CP_uy, 0);
+                                                int n3 = this.CP_J(ComponentTypes.InvalidChunkBatchAckCheck, 0);
                                                 return CP_h9.CP_n(n3, 0, this.CP_R());
                                             }
                                             n = this.CP_r.CP_w(ClientVersion.V_1_13);
@@ -638,7 +638,7 @@ public class CP_Cg {
                                     catch (IllegalArgumentException illegalArgumentException) {
                                         throw CP_Cg.a(illegalArgumentException);
                                     }
-                                    this.CP_j(ComponentTypes.CP_uy, CP_h9.CP_n(n, 0, this.CP_R()));
+                                    this.CP_j(ComponentTypes.InvalidChunkBatchAckCheck, CP_h9.CP_n(n, 0, this.CP_R()));
                                     if (!bl2) break block14;
                                 }
                                 catch (IllegalArgumentException illegalArgumentException) {
@@ -693,7 +693,7 @@ public class CP_Cg {
                     catch (IllegalArgumentException illegalArgumentException) {
                         throw CP_Cg.a(illegalArgumentException);
                     }
-                    return this.CP_J(ComponentTypes.CP_uM, 0);
+                    return this.CP_J(ComponentTypes.InvalidSettingsCheck, 0);
                 }
                 catch (IllegalArgumentException illegalArgumentException) {
                     throw CP_Cg.a(illegalArgumentException);

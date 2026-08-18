@@ -35,7 +35,7 @@ import me.nik.coffeeprotect.CoffeeProtect;
 import me.nik.coffeeprotect.CP_Oq;
 import me.nik.coffeeprotect.CP_PA;
 import me.nik.coffeeprotect.CP_Qb;
-import me.nik.coffeeprotect.CP_TM;
+import me.nik.coffeeprotect.UserData;
 import me.nik.coffeeprotect.CP_jp;
 import me.nik.coffeeprotect.CP_vF;
 import me.nik.coffeeprotect.CP_vn;
@@ -74,7 +74,7 @@ implements Listener {
         String string2;
         String string3;
         String string4;
-        CP_TM ilIlTM;
+        UserData ilIlTM;
         block11: {
             int n2;
             Player player;
