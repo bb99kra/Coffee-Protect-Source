@@ -1,2 +1,0 @@
-Summary for /data/data/com.termux/files/home/storage/shared/Download/Minecraft_Server/01_Plugins_Unlocked/CoffeeProtect-2.5.6.jar
-Decompiled with CFR 0.152
