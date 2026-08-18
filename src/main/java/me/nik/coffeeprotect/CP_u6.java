@@ -1,0 +1,125 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  org.bukkit.entity.Player
+ */
+package me.nik.coffeeprotect;
+
+import java.lang.invoke.MethodHandles;
+import java.security.Key;
+import javax.crypto.Cipher;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.DESKeySpec;
+import javax.crypto.spec.IvParameterSpec;
+import me.nik.coffeeprotect.CP_Oq;
+import me.nik.coffeeprotect.CP_TM;
+import me.nik.coffeeprotect.CP_TV;
+import me.nik.coffeeprotect.CP_jl;
+import me.nik.coffeeprotect.CP_u7;
+import me.nik.coffeeprotect.CP_uV;
+import me.nik.coffeeprotect.com.github.retrooper.packetevents.event.PacketReceiveEvent;
+import me.nik.coffeeprotect.com.github.retrooper.packetevents.protocol.CP_nN;
+import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_bY;
+import me.nik.coffeeprotect.com.github.retrooper.packetevents.wrapper.CP_s;
+import org.bukkit.entity.Player;
+
+@CP_jl(CP_J="Invalid Pick Item", CP_M="Checks for invalid pick item packets")
+public class CP_u6
+extends CP_uV {
+    private static final long b = CP_s.a(6711737719260497621L, 3335889635419089217L, MethodHandles.lookup().lookupClass()).a(3126772621952L);
+    private static final String d;
+    private static transient /* synthetic */ String OrRdheztwg = "4ke1LtZcTsZhhrNjbc5YgpMFiBc3gyeJo7/AqXBycJU=";
+
+    public CP_u6(CP_TM ilIlTM) {
+        super(ilIlTM, CP_Oq.CHECKS_INVALID_PICK_ITEM_ENABLED.CP_t());
+    }
+
+    @Override
+    public CP_TV CP_h(PacketReceiveEvent packetReceiveEvent) {
+        block8: {
+            int n;
+            block7: {
+                int n2;
+                int n3;
+                block6: {
+                    block4: {
+                        block5: {
+                            long l = b ^ 0x566A7CDBBEEDL;
+                            String string = CP_u7.CP_q();
+                            if (packetReceiveEvent.getPacketType() != CP_nN.PICK_ITEM) {
+                                return null;
+                            }
+                            CP_bY ilIlbY = new CP_bY(packetReceiveEvent);
+                            n3 = n = ilIlbY.CP_j();
+                            if (string != null) break block4;
+                            if (n3 >= 0) break block5;
+                            n3 = n;
+                            n2 = -1;
+                            if (string != null) break block6;
+                            if (n3 != n2) break block7;
+                        }
+                        n3 = n;
+                    }
+                    n2 = ((Player)packetReceiveEvent.getPlayer()).getInventory().getContents().length;
+                }
+                if (n3 <= n2) break block8;
+            }
+            return new CP_TV(this, d + n);
+        }
+        return null;
+    }
+
+    /*
+     * Enabled aggressive block sorting
+     */
+    static {
+        long l = b ^ 0x1A54231630E2L;
+        Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
+        SecretKeyFactory secretKeyFactory = SecretKeyFactory.getInstance("DES");
+        byte[] byArray = new byte[8];
+        byte[] byArray2 = byArray;
+        byArray[0] = (byte)(l >>> 56);
+        int n = 1;
+        while (true) {
+            if (n >= 8) {
+                cipher.init(2, (Key)secretKeyFactory.generateSecret(new DESKeySpec(byArray2)), new IvParameterSpec(new byte[8]));
+                byte[] byArray3 = cipher.doFinal("\u008b-Wn2\u008e\r\u00f9".getBytes("ISO-8859-1"));
+                d = CP_u6.b(byArray3).intern();
+                return;
+            }
+            byArray2 = byArray2;
+            byArray2[n] = (byte)(l << n * 8 >>> 56);
+            ++n;
+        }
+    }
+
+    private static String b(byte[] byArray) {
+        int n = 0;
+        int n2 = byArray.length;
+        char[] cArray = new char[n2];
+        for (int i = 0; i < n2; ++i) {
+            char c;
+            int n3 = 0xFF & byArray[i];
+            if (n3 < 192) {
+                cArray[n++] = (char)n3;
+                continue;
+            }
+            if (n3 < 224) {
+                c = (char)((char)(n3 & 0x1F) << 6);
+                n3 = byArray[++i];
+                c = (char)(c | (char)(n3 & 0x3F));
+                cArray[n++] = c;
+                continue;
+            }
+            if (i >= n2 - 2) continue;
+            c = (char)((char)(n3 & 0xF) << 12);
+            n3 = byArray[++i];
+            c = (char)(c | (char)(n3 & 0x3F) << 6);
+            n3 = byArray[++i];
+            c = (char)(c | (char)(n3 & 0x3F));
+            cArray[n++] = c;
+        }
+        return new String(cArray, 0, n);
+    }
+}
